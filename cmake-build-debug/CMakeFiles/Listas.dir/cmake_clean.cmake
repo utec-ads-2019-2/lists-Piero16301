@@ -1,5 +1,7 @@
 file(REMOVE_RECURSE
   "CMakeFiles/Listas.dir/main.cpp.obj"
+  "CMakeFiles/Listas.dir/mock/mocker.cpp.obj"
+  "CMakeFiles/Listas.dir/test/tester.cpp.obj"
   "Listas.pdb"
   "Listas.exe"
   "Listas.exe.manifest"
