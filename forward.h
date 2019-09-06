@@ -1,8 +1,11 @@
 #ifndef FORWARD_H
 #define FORWARD_H
 
+#include <algorithm>
 #include "list.h"
 #include "iterators/forward_iterator.h"
+
+using namespace std;
 
 template <typename T>
 class ForwardList : public List<T> {
@@ -10,51 +13,127 @@ class ForwardList : public List<T> {
         ForwardList() : List<T>() {}
 
         T front() {
-            // TODO
+            return this->head->data;
         }
 
         T back() {
-            // TODO
+            return this->tail->data;
         }
 
         void push_front(T value) {
-            // TODO
+            Node<T>* temporal = new Node(value);
+            if (this->head == nullptr) {
+                this->head = temporal;
+                this->tail = temporal;
+                this->nodes++;
+            } else {
+                temporal->next = this->head;
+                this->head = temporal;
+                this->nodes++;
+            }
         }
 
         void push_back(T value) {
-            // TODO
+            Node<T>* temporal = new Node(value);
+            if (this->head == nullptr) {
+                this->head = temporal;
+                this->tail = temporal;
+                this->nodes++;
+            } else {
+                this->tail->next = temporal;
+                this->tail = temporal;
+                this->nodes++;
+            }
         }
 
         void pop_front() {
-            // TODO
+            Node<T>* temporal = this->head->next;
+            delete this->head;
+            this->head = temporal;
+            this->nodes--;
         }
 
         void pop_back() {
-            // TODO
+            Node<T>* temporal = nullptr;
+            Node<T>* actual = this->head;
+            do {
+                if (actual->next == this->tail) {
+                    temporal = actual;
+                    break;
+                }
+                actual = actual->next;
+            } while (actual != nullptr);
+            delete this->tail;
+            this->tail = temporal;
+            this->tail->next = nullptr;
+            this->nodes--;
         }
 
         T operator[](int index) {
-            // TODO
+            int indice = 0;
+            Node<T>* actual = this->head;
+            if (index >= this->nodes) {
+                throw invalid_argument("Index out of range");
+            } else {
+                while (indice != index) {
+                    indice++;
+                    actual = actual->next;
+                }
+                return actual->data;
+            }
+        }
+
+        void print() {
+            Node<T>* actual = this->head;
+            do {
+                cout << actual->data << ' ';
+                actual = actual->next;
+            } while (actual != nullptr);
+            cout << endl;
         }
 
         bool empty() {
-            // TODO
+            return this->head == nullptr;
         }
 
         int size() {
-            // TODO
+            return this->nodes;
         }
 
         void clear() {
-            // TODO
+            this->head->killSelf();
+            this->head = nullptr;
+            this->tail = nullptr;
         }
 
         void sort() {
-            // TODO
+            vector <T> numeros;
+            Node<T>* actual = this->head;
+            do {
+                numeros.push_back(actual->data);
+                actual = actual->next;
+            } while (actual != nullptr);
+            std::sort(numeros.begin(), numeros.end());
+            actual = this->head;
+            for (int i = 0; i < this->nodes; ++i) {
+                actual->data = numeros[i];
+                actual = actual->next;
+            }
         }
     
         void reverse() {
-            // TODO
+            vector <T> numeros;
+            Node<T>* actual = this->head;
+            do {
+                numeros.push_back(actual->data);
+                actual = actual->next;
+            } while (actual != nullptr);
+            std::reverse(numeros.begin(), numeros.end());
+            actual = this->head;
+            for (int i = 0; i < this->nodes; ++i) {
+                actual->data = numeros[i];
+                actual = actual->next;
+            }
         }
 
         string name() {
@@ -70,7 +149,16 @@ class ForwardList : public List<T> {
         }
 
         void merge(ForwardList<T> list) {
-            // TODO
+            Node<T>* actual = list.head;
+            do {
+                this->push_back(actual->data);
+                actual = actual->next;
+            } while (actual != nullptr);
+        }
+
+        ~ForwardList() {
+            //clear();
+            //cout << "Destructor " << this->front() << endl;
         }
 };
 

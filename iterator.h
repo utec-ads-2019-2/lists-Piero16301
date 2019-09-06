@@ -3,7 +3,7 @@
 
 #include "node.h"
 
-template <typename T> 
+template <typename T>
 class Iterator {
     protected:
         Node<T> *current;

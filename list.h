@@ -8,7 +8,7 @@ class List {
     protected:
         Node<T>* head;
         Node<T>* tail;
-        int nodes;
+        int nodes = 0;
 
     public:
         List() : head(nullptr), tail(nullptr), nodes(0) {};

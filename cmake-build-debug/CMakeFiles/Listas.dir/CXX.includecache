@@ -11,6 +11,8 @@ list.h
 C:/Users/piero/Downloads/lists-Piero16301/list.h
 
 C:/Users/piero/Downloads/lists-Piero16301/forward.h
+algorithm
+-
 list.h
 C:/Users/piero/Downloads/lists-Piero16301/list.h
 iterators/forward_iterator.h
@@ -38,9 +40,11 @@ C:/Users/piero/Downloads/lists-Piero16301/list.h
 node.h
 C:/Users/piero/Downloads/lists-Piero16301/node.h
 
-C:/Users/piero/Downloads/lists-Piero16301/mock/mocker.cpp
-mocker.h
-C:/Users/piero/Downloads/lists-Piero16301/mock/mocker.h
+C:/Users/piero/Downloads/lists-Piero16301/main.cpp
+iostream
+-
+test/tester.h
+C:/Users/piero/Downloads/lists-Piero16301/test/tester.h
 
 C:/Users/piero/Downloads/lists-Piero16301/mock/mocker.h
 random
@@ -50,16 +54,12 @@ type_traits
 
 C:/Users/piero/Downloads/lists-Piero16301/node.h
 
-C:/Users/piero/Downloads/lists-Piero16301/test/tester.cpp
-tester.h
-C:/Users/piero/Downloads/lists-Piero16301/test/tester.h
-
 C:/Users/piero/Downloads/lists-Piero16301/test/tester.h
 stdexcept
 -
 iostream
 -
-assert.h
+cassert
 -
 ../mock/mocker.h
 C:/Users/piero/Downloads/lists-Piero16301/mock/mocker.h
