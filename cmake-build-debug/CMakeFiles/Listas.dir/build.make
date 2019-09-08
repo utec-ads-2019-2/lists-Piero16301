@@ -33,10 +33,10 @@ cmake_force:
 SHELL = cmd.exe
 
 # The CMake executable.
-CMAKE_COMMAND = "C:\Program Files\JetBrains\CLion 2019.2\bin\cmake\win\bin\cmake.exe"
+CMAKE_COMMAND = "C:\Program Files\JetBrains\CLion 2019.2.1\bin\cmake\win\bin\cmake.exe"
 
 # The command to remove a file.
-RM = "C:\Program Files\JetBrains\CLion 2019.2\bin\cmake\win\bin\cmake.exe" -E remove -f
+RM = "C:\Program Files\JetBrains\CLion 2019.2.1\bin\cmake\win\bin\cmake.exe" -E remove -f
 
 # Escaping for special characters.
 EQUALS = =
@@ -59,41 +59,41 @@ include CMakeFiles/Listas.dir/flags.make
 CMakeFiles/Listas.dir/main.cpp.obj: CMakeFiles/Listas.dir/flags.make
 CMakeFiles/Listas.dir/main.cpp.obj: ../main.cpp
 	@$(CMAKE_COMMAND) -E cmake_echo_color --switch=$(COLOR) --green --progress-dir=C:\Users\piero\Downloads\lists-Piero16301\cmake-build-debug\CMakeFiles --progress-num=$(CMAKE_PROGRESS_1) "Building CXX object CMakeFiles/Listas.dir/main.cpp.obj"
-	C:\PROGRA~2\MINGW-~1\I686-8~1.0-P\mingw32\bin\G__~1.EXE  $(CXX_DEFINES) $(CXX_INCLUDES) $(CXX_FLAGS) -o CMakeFiles\Listas.dir\main.cpp.obj -c C:\Users\piero\Downloads\lists-Piero16301\main.cpp
+	C:\MinGW\mingw32\bin\g++.exe  $(CXX_DEFINES) $(CXX_INCLUDES) $(CXX_FLAGS) -o CMakeFiles\Listas.dir\main.cpp.obj -c C:\Users\piero\Downloads\lists-Piero16301\main.cpp
 
 CMakeFiles/Listas.dir/main.cpp.i: cmake_force
 	@$(CMAKE_COMMAND) -E cmake_echo_color --switch=$(COLOR) --green "Preprocessing CXX source to CMakeFiles/Listas.dir/main.cpp.i"
-	C:\PROGRA~2\MINGW-~1\I686-8~1.0-P\mingw32\bin\G__~1.EXE $(CXX_DEFINES) $(CXX_INCLUDES) $(CXX_FLAGS) -E C:\Users\piero\Downloads\lists-Piero16301\main.cpp > CMakeFiles\Listas.dir\main.cpp.i
+	C:\MinGW\mingw32\bin\g++.exe $(CXX_DEFINES) $(CXX_INCLUDES) $(CXX_FLAGS) -E C:\Users\piero\Downloads\lists-Piero16301\main.cpp > CMakeFiles\Listas.dir\main.cpp.i
 
 CMakeFiles/Listas.dir/main.cpp.s: cmake_force
 	@$(CMAKE_COMMAND) -E cmake_echo_color --switch=$(COLOR) --green "Compiling CXX source to assembly CMakeFiles/Listas.dir/main.cpp.s"
-	C:\PROGRA~2\MINGW-~1\I686-8~1.0-P\mingw32\bin\G__~1.EXE $(CXX_DEFINES) $(CXX_INCLUDES) $(CXX_FLAGS) -S C:\Users\piero\Downloads\lists-Piero16301\main.cpp -o CMakeFiles\Listas.dir\main.cpp.s
+	C:\MinGW\mingw32\bin\g++.exe $(CXX_DEFINES) $(CXX_INCLUDES) $(CXX_FLAGS) -S C:\Users\piero\Downloads\lists-Piero16301\main.cpp -o CMakeFiles\Listas.dir\main.cpp.s
 
 CMakeFiles/Listas.dir/mock/mocker.cpp.obj: CMakeFiles/Listas.dir/flags.make
 CMakeFiles/Listas.dir/mock/mocker.cpp.obj: ../mock/mocker.cpp
 	@$(CMAKE_COMMAND) -E cmake_echo_color --switch=$(COLOR) --green --progress-dir=C:\Users\piero\Downloads\lists-Piero16301\cmake-build-debug\CMakeFiles --progress-num=$(CMAKE_PROGRESS_2) "Building CXX object CMakeFiles/Listas.dir/mock/mocker.cpp.obj"
-	C:\PROGRA~2\MINGW-~1\I686-8~1.0-P\mingw32\bin\G__~1.EXE  $(CXX_DEFINES) $(CXX_INCLUDES) $(CXX_FLAGS) -o CMakeFiles\Listas.dir\mock\mocker.cpp.obj -c C:\Users\piero\Downloads\lists-Piero16301\mock\mocker.cpp
+	C:\MinGW\mingw32\bin\g++.exe  $(CXX_DEFINES) $(CXX_INCLUDES) $(CXX_FLAGS) -o CMakeFiles\Listas.dir\mock\mocker.cpp.obj -c C:\Users\piero\Downloads\lists-Piero16301\mock\mocker.cpp
 
 CMakeFiles/Listas.dir/mock/mocker.cpp.i: cmake_force
 	@$(CMAKE_COMMAND) -E cmake_echo_color --switch=$(COLOR) --green "Preprocessing CXX source to CMakeFiles/Listas.dir/mock/mocker.cpp.i"
-	C:\PROGRA~2\MINGW-~1\I686-8~1.0-P\mingw32\bin\G__~1.EXE $(CXX_DEFINES) $(CXX_INCLUDES) $(CXX_FLAGS) -E C:\Users\piero\Downloads\lists-Piero16301\mock\mocker.cpp > CMakeFiles\Listas.dir\mock\mocker.cpp.i
+	C:\MinGW\mingw32\bin\g++.exe $(CXX_DEFINES) $(CXX_INCLUDES) $(CXX_FLAGS) -E C:\Users\piero\Downloads\lists-Piero16301\mock\mocker.cpp > CMakeFiles\Listas.dir\mock\mocker.cpp.i
 
 CMakeFiles/Listas.dir/mock/mocker.cpp.s: cmake_force
 	@$(CMAKE_COMMAND) -E cmake_echo_color --switch=$(COLOR) --green "Compiling CXX source to assembly CMakeFiles/Listas.dir/mock/mocker.cpp.s"
-	C:\PROGRA~2\MINGW-~1\I686-8~1.0-P\mingw32\bin\G__~1.EXE $(CXX_DEFINES) $(CXX_INCLUDES) $(CXX_FLAGS) -S C:\Users\piero\Downloads\lists-Piero16301\mock\mocker.cpp -o CMakeFiles\Listas.dir\mock\mocker.cpp.s
+	C:\MinGW\mingw32\bin\g++.exe $(CXX_DEFINES) $(CXX_INCLUDES) $(CXX_FLAGS) -S C:\Users\piero\Downloads\lists-Piero16301\mock\mocker.cpp -o CMakeFiles\Listas.dir\mock\mocker.cpp.s
 
 CMakeFiles/Listas.dir/test/tester.cpp.obj: CMakeFiles/Listas.dir/flags.make
 CMakeFiles/Listas.dir/test/tester.cpp.obj: ../test/tester.cpp
 	@$(CMAKE_COMMAND) -E cmake_echo_color --switch=$(COLOR) --green --progress-dir=C:\Users\piero\Downloads\lists-Piero16301\cmake-build-debug\CMakeFiles --progress-num=$(CMAKE_PROGRESS_3) "Building CXX object CMakeFiles/Listas.dir/test/tester.cpp.obj"
-	C:\PROGRA~2\MINGW-~1\I686-8~1.0-P\mingw32\bin\G__~1.EXE  $(CXX_DEFINES) $(CXX_INCLUDES) $(CXX_FLAGS) -o CMakeFiles\Listas.dir\test\tester.cpp.obj -c C:\Users\piero\Downloads\lists-Piero16301\test\tester.cpp
+	C:\MinGW\mingw32\bin\g++.exe  $(CXX_DEFINES) $(CXX_INCLUDES) $(CXX_FLAGS) -o CMakeFiles\Listas.dir\test\tester.cpp.obj -c C:\Users\piero\Downloads\lists-Piero16301\test\tester.cpp
 
 CMakeFiles/Listas.dir/test/tester.cpp.i: cmake_force
 	@$(CMAKE_COMMAND) -E cmake_echo_color --switch=$(COLOR) --green "Preprocessing CXX source to CMakeFiles/Listas.dir/test/tester.cpp.i"
-	C:\PROGRA~2\MINGW-~1\I686-8~1.0-P\mingw32\bin\G__~1.EXE $(CXX_DEFINES) $(CXX_INCLUDES) $(CXX_FLAGS) -E C:\Users\piero\Downloads\lists-Piero16301\test\tester.cpp > CMakeFiles\Listas.dir\test\tester.cpp.i
+	C:\MinGW\mingw32\bin\g++.exe $(CXX_DEFINES) $(CXX_INCLUDES) $(CXX_FLAGS) -E C:\Users\piero\Downloads\lists-Piero16301\test\tester.cpp > CMakeFiles\Listas.dir\test\tester.cpp.i
 
 CMakeFiles/Listas.dir/test/tester.cpp.s: cmake_force
 	@$(CMAKE_COMMAND) -E cmake_echo_color --switch=$(COLOR) --green "Compiling CXX source to assembly CMakeFiles/Listas.dir/test/tester.cpp.s"
-	C:\PROGRA~2\MINGW-~1\I686-8~1.0-P\mingw32\bin\G__~1.EXE $(CXX_DEFINES) $(CXX_INCLUDES) $(CXX_FLAGS) -S C:\Users\piero\Downloads\lists-Piero16301\test\tester.cpp -o CMakeFiles\Listas.dir\test\tester.cpp.s
+	C:\MinGW\mingw32\bin\g++.exe $(CXX_DEFINES) $(CXX_INCLUDES) $(CXX_FLAGS) -S C:\Users\piero\Downloads\lists-Piero16301\test\tester.cpp -o CMakeFiles\Listas.dir\test\tester.cpp.s
 
 # Object files for target Listas
 Listas_OBJECTS = \

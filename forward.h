@@ -22,27 +22,25 @@ class ForwardList : public List<T> {
 
         void push_front(T value) {
             Node<T>* temporal = new Node(value);
+            this->nodes++;
             if (this->head == nullptr) {
                 this->head = temporal;
                 this->tail = temporal;
-                this->nodes++;
             } else {
                 temporal->next = this->head;
                 this->head = temporal;
-                this->nodes++;
             }
         }
 
         void push_back(T value) {
             Node<T>* temporal = new Node(value);
+            this->nodes++;
             if (this->head == nullptr) {
                 this->head = temporal;
                 this->tail = temporal;
-                this->nodes++;
             } else {
                 this->tail->next = temporal;
                 this->tail = temporal;
-                this->nodes++;
             }
         }
 
@@ -148,7 +146,7 @@ class ForwardList : public List<T> {
             // TODO
         }
 
-        void merge(ForwardList<T> list) {
+        void merge(ForwardList<T> &list) {
             Node<T>* actual = list.head;
             do {
                 this->push_back(actual->data);
@@ -157,8 +155,7 @@ class ForwardList : public List<T> {
         }
 
         ~ForwardList() {
-            //clear();
-            //cout << "Destructor " << this->front() << endl;
+            clear();
         }
 };
 
