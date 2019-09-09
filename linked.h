@@ -10,11 +10,19 @@ class LinkedList : public List<T> {
         LinkedList() : List<T>() {}
 
         T front() {
-            return this->head->data;
+            if (this->head == nullptr) {
+                throw invalid_argument("Lista vacia");
+            } else {
+                return this->head->data;
+            }
         }
 
         T back() {
-            return this->head->data;
+            if (this->head == nullptr) {
+                throw invalid_argument("Lista vacia");
+            } else {
+                return this->tail->data;
+            }
         }
 
         void push_front(T value) {
@@ -44,24 +52,32 @@ class LinkedList : public List<T> {
         }
 
         void pop_front() {
-            Node<T>* temporal = this->head->next;
-            delete this->head;
-            this->head = temporal;
-            this->nodes--;
+            if (this->head == nullptr) {
+                throw invalid_argument("Lista vacia");
+            } else {
+                Node<T> *temporal = this->head->next;
+                delete this->head;
+                this->head = temporal;
+                this->nodes--;
+            }
         }
 
         void pop_back() {
-            Node<T>* temporal = this->tail->prev;
-            delete this->tail;
-            this->tail = temporal;
-            this->nodes--;
+            if (this->head == nullptr) {
+                throw invalid_argument("Lista vacia");
+            } else {
+                Node<T> *temporal = this->tail->prev;
+                delete this->tail;
+                this->tail = temporal;
+                this->nodes--;
+            }
         }
 
         T operator[](int index) {
             int indice = 0;
             Node<T>* actual = this->head;
             if (index >= this->nodes) {
-                throw invalid_argument("Index out of range");
+                throw invalid_argument("Indice fuera de rango");
             } else {
                 while (indice != index) {
                     indice++;
@@ -72,12 +88,16 @@ class LinkedList : public List<T> {
         }
 
         void print() {
-            Node<T>* actual = this->head;
-            do {
-                cout << actual->data << ' ';
-                actual = actual->next;
-            } while (actual != nullptr);
-            cout << endl;
+            if (this->head == nullptr) {
+                throw invalid_argument("Lista vacia");
+            } else {
+                Node<T>* actual = this->head;
+                do {
+                    cout << actual->data << ' ';
+                    actual = actual->next;
+                } while (actual != nullptr);
+                cout << endl;
+            }
         }
 
         bool empty() {
@@ -89,38 +109,51 @@ class LinkedList : public List<T> {
         }
 
         void clear() {
-            this->head->killSelf();
-            this->head = nullptr;
-            this->tail = nullptr;
+            if (this->head == nullptr) {
+                this->head = nullptr;
+                this->tail = nullptr;
+            } else {
+                this->head->killSelf();
+                this->head = nullptr;
+                this->tail = nullptr;
+            }
         }
 
         void sort() {
-            vector <T> numeros;
-            Node<T>* actual = this->head;
-            do {
-                numeros.push_back(actual->data);
-                actual = actual->next;
-            } while (actual != nullptr);
-            std::sort(numeros.begin(), numeros.end());
-            actual = this->head;
-            for (int i = 0; i < this->nodes; ++i) {
-                actual->data = numeros[i];
-                actual = actual->next;
+            if (this->head == nullptr) {
+                throw invalid_argument("Lista vacia");
+            } else {
+                vector<T> numeros;
+                Node<T> *actual = this->head;
+                do {
+                    numeros.push_back(actual->data);
+                    actual = actual->next;
+                } while (actual != nullptr);
+                std::sort(numeros.begin(), numeros.end());
+                actual = this->head;
+                for (int i = 0; i < this->nodes; ++i) {
+                    actual->data = numeros[i];
+                    actual = actual->next;
+                }
             }
         }
     
         void reverse() {
-            vector <T> numeros;
-            Node<T>* actual = this->head;
-            do {
-                numeros.push_back(actual->data);
-                actual = actual->next;
-            } while (actual != nullptr);
-            std::reverse(numeros.begin(), numeros.end());
-            actual = this->head;
-            for (int i = 0; i < this->nodes; ++i) {
-                actual->data = numeros[i];
-                actual = actual->next;
+            if (this->head == nullptr) {
+                throw invalid_argument("Lista vacia");
+            } else {
+                vector<T> numeros;
+                Node<T> *actual = this->head;
+                do {
+                    numeros.push_back(actual->data);
+                    actual = actual->next;
+                } while (actual != nullptr);
+                std::reverse(numeros.begin(), numeros.end());
+                actual = this->head;
+                for (int i = 0; i < this->nodes; ++i) {
+                    actual->data = numeros[i];
+                    actual = actual->next;
+                }
             }
         }
 
@@ -137,11 +170,15 @@ class LinkedList : public List<T> {
         }
 
         void merge(LinkedList<T> &list) {
-            Node<T>* actual = list.head;
-            do {
-                this->push_back(actual->data);
-                actual = actual->next;
-            } while (actual != nullptr);
+            if (this->head == nullptr || list.head == nullptr) {
+                throw invalid_argument("No se puede realizar el merge, alguna de las listas esta vacia");
+            } else {
+                Node<T> *actual = list.head;
+                do {
+                    this->push_back(actual->data);
+                    actual = actual->next;
+                } while (actual != nullptr);
+            }
         }
 
         ~LinkedList() {
