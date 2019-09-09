@@ -76,7 +76,7 @@ class LinkedList : public List<T> {
         T operator[](int index) {
             int indice = 0;
             Node<T>* actual = this->head;
-            if (index >= this->nodes) {
+            if (index >= this->nodes || index < 0) {
                 throw invalid_argument("Indice fuera de rango");
             } else {
                 while (indice != index) {
