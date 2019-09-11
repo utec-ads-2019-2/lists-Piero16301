@@ -80,5 +80,9 @@ int main(int argc, char *argv[]) {
     circularLinkedList.print();
     listaCircular.print();*/
 
+    CircularLinkedList<int> circularL1;
+    //circularL1.push_back(10);
+    //circularL1.pop_back();
+
     return EXIT_SUCCESS;
 }

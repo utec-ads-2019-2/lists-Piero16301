@@ -64,6 +64,7 @@ class CircularLinkedList : public List<T> {
             } else {
                 Node<T> *temporal = this->head->next;
                 delete this->head;
+                if (this->nodes == 1) return;
                 temporal->prev = this->tail;
                 this->tail->next = temporal;
                 this->head = temporal;
@@ -77,6 +78,7 @@ class CircularLinkedList : public List<T> {
             } else {
                 Node<T> *temporal = this->tail->prev;
                 delete this->tail;
+                if (this->nodes == 1) return;
                 temporal->next = this->head;
                 this->head->prev = temporal;
                 this->tail = temporal;
@@ -121,12 +123,14 @@ class CircularLinkedList : public List<T> {
         }
 
         void clear() {
+            if (this->nodes == 0) return;
             Node<T>* actual = this->head->next;
             delete this->head;
             while (actual != this->head) {
                 delete actual;
                 actual = actual->next;
             }
+            this->nodes = 0;
         }
 
         void sort() {
@@ -182,8 +186,8 @@ class CircularLinkedList : public List<T> {
         }
 
         void merge(CircularLinkedList<T> &list) {
-            if (this->head == nullptr || list.head == nullptr) {
-                throw invalid_argument("No se puede realizar el merge, alguna de las listas esta vacia");
+            if (list.head == nullptr) {
+                throw invalid_argument("No se puede realizar el merge, la esta vacia");
             } else {
                 Node<T> *actual = list.head->next;
                 this->push_back(list.head->data);
