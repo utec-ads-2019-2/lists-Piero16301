@@ -126,6 +126,7 @@ class ForwardList : public List<T> {
                 this->head->killSelf();
                 this->head = nullptr;
                 this->tail = nullptr;
+                this->nodes = 0;
             }
         }
 
@@ -172,15 +173,15 @@ class ForwardList : public List<T> {
         }
 
         ForwardIterator<T> begin() {
-            // TODO
+            return ForwardIterator(this->head);
         }
 
 	    ForwardIterator<T> end() {
-            // TODO
+            return ForwardIterator(this->tail->next);
         }
 
         void merge(ForwardList<T> &list) {
-            if (this->head == nullptr || list.head == nullptr) {
+            if (this->head == nullptr && list.head == nullptr) {
                 throw invalid_argument("No se puede realizar el merge, alguna de las listas esta vacia");
             } else {
                 Node<T>* actual = list.head;

@@ -19,6 +19,10 @@
       <change beforePath="$PROJECT_DIR$/cmake-build-debug/CMakeFiles/Listas.dir/objects.a" beforeDir="false" afterPath="$PROJECT_DIR$/cmake-build-debug/CMakeFiles/Listas.dir/objects.a" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/cmake-build-debug/CMakeFiles/Listas.dir/test/tester.cpp.obj" beforeDir="false" afterPath="$PROJECT_DIR$/cmake-build-debug/CMakeFiles/Listas.dir/test/tester.cpp.obj" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/cmake-build-debug/Listas.exe" beforeDir="false" afterPath="$PROJECT_DIR$/cmake-build-debug/Listas.exe" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/forward.h" beforeDir="false" afterPath="$PROJECT_DIR$/forward.h" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/iterators/bidirectional_iterator.h" beforeDir="false" afterPath="$PROJECT_DIR$/iterators/bidirectional_iterator.h" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/iterators/forward_iterator.h" beforeDir="false" afterPath="$PROJECT_DIR$/iterators/forward_iterator.h" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/linked.h" beforeDir="false" afterPath="$PROJECT_DIR$/linked.h" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/main.cpp" beforeDir="false" afterPath="$PROJECT_DIR$/main.cpp" afterDir="false" />
     </list>
     <option name="EXCLUDED_CONVERTED_TO_IGNORED" value="true" />
@@ -34,6 +38,7 @@
   <component name="Git.Settings">
     <option name="RECENT_GIT_ROOT_PATH" value="$PROJECT_DIR$" />
   </component>
+  <component name="OCFindUsagesOptions" text="true" ivars="false" properties="true" derivedClasses="false" />
   <component name="ProjectId" id="1QOTFpsz2LeensYebLZfccVUIuF" />
   <component name="PropertiesComponent">
     <property name="SHARE_PROJECT_CONFIGURATION_FILES" value="true" />
@@ -82,7 +87,8 @@
       <workItem from="1567929082006" duration="14082000" />
       <workItem from="1568059712766" duration="1799000" />
       <workItem from="1568182018298" duration="2109000" />
-      <workItem from="1568222519875" duration="981000" />
+      <workItem from="1568222519875" duration="2942000" />
+      <workItem from="1568239379731" duration="8211000" />
     </task>
     <servers />
   </component>
@@ -109,5 +115,12 @@
         <breakpoint enabled="true" type="javascript-exception" />
       </default-breakpoints>
     </breakpoint-manager>
+    <watches-manager>
+      <configuration name="CMakeRunConfiguration">
+        <watch expression="actual" />
+        <watch expression="it" />
+        <watch expression="mocker" />
+      </configuration>
+    </watches-manager>
   </component>
 </project>

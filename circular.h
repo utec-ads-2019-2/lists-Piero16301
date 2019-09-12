@@ -115,7 +115,7 @@ class CircularLinkedList : public List<T> {
         }
 
         bool empty() {
-            return this->head == nullptr;
+            return this->nodes == 0;
         }
 
         int size() {
@@ -124,13 +124,20 @@ class CircularLinkedList : public List<T> {
 
         void clear() {
             if (this->nodes == 0) return;
-            Node<T>* actual = this->head->next;
-            delete this->head;
-            while (actual != this->head) {
+            Node<T>* actual = this->head;
+            if (this->nodes == 1) {
                 delete actual;
-                actual = actual->next;
+                this->nodes = 0;
+                return;
             }
+            for (int i = 0; i < this->nodes; ++i) {
+                if (i == 0) continue;
+                actual = actual->next;
+                delete actual->prev;
+            }
+            delete actual;
             this->nodes = 0;
+            this->head = nullptr;
         }
 
         void sort() {
@@ -178,11 +185,11 @@ class CircularLinkedList : public List<T> {
         }
 
         BidirectionalIterator<T> begin() {
-            // TODO
+            return BidirectionalIterator(this->head);
         }
 
 	    BidirectionalIterator<T> end() {
-            // TODO
+            return BidirectionalIterator(this->tail->next);
         }
 
         void merge(CircularLinkedList<T> &list) {

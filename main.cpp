@@ -8,7 +8,7 @@ int main(int argc, char *argv[]) {
     cout << "\tLists Practice" << endl;
     cout << "===========================================================" << endl << endl;
 
-    //Tester::execute();
+    Tester::execute();
     //=========== Forward list test ===========//
     /*ForwardList<int> forwardList;
     ForwardList<int> listaSimple;
@@ -80,9 +80,18 @@ int main(int argc, char *argv[]) {
     circularLinkedList.print();
     listaCircular.print();*/
 
-    CircularLinkedList<int> circularL1;
-    //circularL1.push_back(10);
-    //circularL1.pop_back();
+    //=========== Iterators test ===========//
+
+    /*CircularLinkedList<int> circularLinkedList;
+    circularLinkedList.push_back(1);
+    circularLinkedList.push_back(2);
+    circularLinkedList.push_back(3);
+    circularLinkedList.push_back(4);
+    circularLinkedList.push_back(5);
+    circularLinkedList.print();
+    for (auto iterator = circularLinkedList.begin(); iterator != circularLinkedList.end(); ++iterator) {
+        cout << *iterator << ' ';
+    }*/
 
     return EXIT_SUCCESS;
 }

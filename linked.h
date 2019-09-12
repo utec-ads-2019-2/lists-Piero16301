@@ -3,6 +3,7 @@
 
 #include "list.h"
 #include "iterators/bidirectional_iterator.h"
+#include <vector>
 
 template <typename T>
 class LinkedList : public List<T> {
@@ -116,6 +117,7 @@ class LinkedList : public List<T> {
                 this->head->killSelf();
                 this->head = nullptr;
                 this->tail = nullptr;
+                this->nodes = 0;
             }
         }
 
@@ -144,10 +146,10 @@ class LinkedList : public List<T> {
             } else {
                 vector<T> numeros;
                 Node<T> *actual = this->head;
-                do {
+                for (int j = 0; j < this->nodes; ++j) {
                     numeros.push_back(actual->data);
                     actual = actual->next;
-                } while (actual != nullptr);
+                }
                 std::reverse(numeros.begin(), numeros.end());
                 actual = this->head;
                 for (int i = 0; i < this->nodes; ++i) {
@@ -162,15 +164,15 @@ class LinkedList : public List<T> {
         }
 
         BidirectionalIterator<T> begin() {
-            // TODO
+            return BidirectionalIterator(this->head);
         }
 
 	    BidirectionalIterator<T> end() {
-            // TODO
+            return BidirectionalIterator(this->tail->next);
         }
 
         void merge(LinkedList<T> &list) {
-            if (this->head == nullptr || list.head == nullptr) {
+            if (this->head == nullptr && list.head == nullptr) {
                 throw invalid_argument("No se puede realizar el merge, alguna de las listas esta vacia");
             } else {
                 Node<T> *actual = list.head;
