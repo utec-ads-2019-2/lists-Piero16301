@@ -110,6 +110,7 @@ class LinkedList : public List<T> {
         }
 
         void clear() {
+            // El primer if está de más
             if (this->head == nullptr) {
                 this->head = nullptr;
                 this->tail = nullptr;

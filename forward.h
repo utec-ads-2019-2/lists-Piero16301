@@ -29,6 +29,7 @@ class ForwardList : public List<T> {
         }
 
         void push_front(T value) {
+            // Falta el template
             Node<T>* temporal = new Node(value);
             this->nodes++;
             if (this->head == nullptr) {
@@ -41,6 +42,7 @@ class ForwardList : public List<T> {
         }
 
         void push_back(T value) {
+            // Falta el template
             Node<T>* temporal = new Node(value);
             this->nodes++;
             if (this->head == nullptr) {
@@ -150,6 +152,7 @@ class ForwardList : public List<T> {
         }
     
         void reverse() {
+            // Hay mejores formas de implementar esta parte
             if (this->head == nullptr) {
                 throw invalid_argument("Lista vacia");
             } else {
@@ -172,15 +175,18 @@ class ForwardList : public List<T> {
             return "Forward List";
         }
 
+        // Falta el template
         ForwardIterator<T> begin() {
             return ForwardIterator(this->head);
         }
 
+        // Falta el template
 	    ForwardIterator<T> end() {
             return ForwardIterator(this->tail->next);
         }
 
         void merge(ForwardList<T> &list) {
+            // Debería permitir aún si las listas están vacías
             if (this->head == nullptr && list.head == nullptr) {
                 throw invalid_argument("No se puede realizar el merge, alguna de las listas esta vacia");
             } else {

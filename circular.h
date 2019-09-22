@@ -2,6 +2,7 @@
 #define CIRCULAR_H
 
 #include "list.h"
+#include "iterators/bidirectional_iterator.h"
 
 template <typename T>
 class CircularLinkedList : public List<T> {
@@ -25,6 +26,7 @@ class CircularLinkedList : public List<T> {
         }
 
         void push_front(T value) {
+            // Falta el template
             Node<T>* temporal = new Node(value);
             this->nodes++;
             if (this->head == nullptr) {
@@ -42,6 +44,8 @@ class CircularLinkedList : public List<T> {
         }
 
         void push_back(T value) {
+            // No es necesario tener tail en una lista circular
+            // Falta el template
             Node<T>* temporal = new Node(value);
             this->nodes++;
             if (this->head == nullptr) {
@@ -73,6 +77,7 @@ class CircularLinkedList : public List<T> {
         }
 
         void pop_back() {
+            // No es necesario controlar el caso de la lista vacía, igual no está mal
             if (this->head == nullptr) {
                 throw invalid_argument("Lista vacia");
             } else {
@@ -87,6 +92,7 @@ class CircularLinkedList : public List<T> {
         }
 
         T operator[](int index) {
+            // Aquí no es tan necesario controlar el índice
             int indice = 0;
             Node<T>* actual = this->head;
             if (index >= this->nodes || index < 0) {
@@ -101,6 +107,7 @@ class CircularLinkedList : public List<T> {
         }
 
         void print() {
+            // Si es un imprimir, si la lista está vacía solo no imprimes nada
             if (this->head == nullptr) {
                 throw invalid_argument("Lista vacia");
             } else {
@@ -130,6 +137,8 @@ class CircularLinkedList : public List<T> {
                 this->nodes = 0;
                 return;
             }
+
+            // Esto no está tan bien, el continue no tiene razón de ser
             for (int i = 0; i < this->nodes; ++i) {
                 if (i == 0) continue;
                 actual = actual->next;
@@ -184,10 +193,12 @@ class CircularLinkedList : public List<T> {
             return "Circular Linked List";
         }
 
+        // Falta el template
         BidirectionalIterator<T> begin() {
             return BidirectionalIterator(this->head);
         }
 
+        // Falta el template
 	    BidirectionalIterator<T> end() {
             return BidirectionalIterator(this->tail->next);
         }
