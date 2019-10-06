@@ -197,6 +197,20 @@ class ForwardList : public List<T> {
                 } while (actual != nullptr);
             }
         }
+	
+	T findMiddleElement() {
+            Node<T>* actual = this->head;
+            Node<T>* resultado = this->head;
+            int par = 0;
+            while (actual) {
+                if (par > 0  && par%2 == 0) {
+                    resultado = resultado->next;
+                }
+                par++;
+                actual = actual->next;
+            }
+            return resultado->data;
+        }
 
         ~ForwardList() {
             clear();
